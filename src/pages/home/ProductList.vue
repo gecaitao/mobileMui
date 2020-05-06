@@ -3,6 +3,7 @@
     <van-row gutter="10">
       <van-col span="8"  v-for="item in list" :key="item.id">
         <van-card
+          @click="event=>{toDetail(event,item)}"
           :desc="item.description"
           :title="item.name"
           thumb="https://img.yzcdn.cn/vant/ipad.jpeg"
@@ -30,6 +31,9 @@ export default {
     this.list = temp
   },
   methods: {
+    toDetail (event,item) {
+      this.$router.push({name:'Detail',params:{id:item.id}})
+    }
   }
 }
 </script>
