@@ -7,19 +7,22 @@
       <ProductHeader style="width: 100%;height: 60px;"></ProductHeader>
       <ProductList></ProductList>
     </section>
-    <footer class="home-fotter">脚</footer>
+    <footer class="home-fotter">
+      <Footer></Footer>
+    </footer>
     <Help></Help>
   </section>
 </template>
 
 <script>
 import Header from '@/components/header/Header.vue'
+import Footer from '@/components/footer/Footer.vue'
 import Help from '@/components/help/Help.vue'
 import ProductHeader from './ProductHeader.vue'
 import ProductList from './ProductList.vue'
 export default {
   name: 'App',
-  components: {Header, Help, ProductHeader, ProductList},
+  components: {Header, Footer, Help, ProductHeader, ProductList},
   data(){
     return{
     }

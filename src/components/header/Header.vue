@@ -2,15 +2,17 @@
   <section class="head">
     <van-icon name="aim" @click="openArea" size="36"/> {{realyAddress}}
     <van-dialog ref="addressDialog" v-model="showArea" title="选择地址" :showConfirmButton="false">
-      <van-area :area-list="areaList" @confirm="selectOk"/>
+      <van-area :area-list="areaList" @confirm="selectOk"  @cancel="showArea = false"/>
     </van-dialog>
+    <van-checkbox v-model="checked" shape="square">复选框</van-checkbox>
+    <van-icon name="chat-o" badge="99+" size="40"/>
   </section>
 </template>
 
 <script>
 import areaList from '@/assets/configData/areaList.js'
 export default {
-  name: 'App',
+  name: 'Header',
   computed: {
     'realyAddress':function(){
       let temp = this.selectedArea.length>0 &&  this.selectedArea.map(item=>{
@@ -26,6 +28,7 @@ export default {
       areaList: areaList,
       selectedArea: [],
       showArea: false,
+      checked: false,
       images: [
       require('@/assets/image/logo1.png'),
       require('@/assets/image/logo2.png')
@@ -53,5 +56,9 @@ export default {
   height: 100%;
   display: flex;
   padding: 0px 20px;
+  justify-content: space-between;
+  .van-icon-chat-o{
+    align-self: center;
+  }
 }
 </style>
