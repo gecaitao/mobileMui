@@ -19,6 +19,8 @@
     <van-button @click="addCount">
       {{getCount}}sotre{{storeCount}}
     </van-button>
+    <test-toast ref="toast"/>
+    <test-panel ref="panel"/>
 
   </section>
 </template>
@@ -81,6 +83,9 @@ export default {
     setInterval(()=>{
       // this.skeletonLoading = !this.skeletonLoading
     },5000)
+  },
+  mounted () {
+    this.$refs.toast.toastPlugin('插件', 1000)
   }
 }
 </script>

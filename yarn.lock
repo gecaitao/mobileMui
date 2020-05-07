@@ -8108,6 +8108,14 @@ vue-eslint-parser@^7.0.0:
     esquery "^1.0.1"
     lodash "^4.17.15"
 
+vue-gct-panel-toast@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/vue-gct-panel-toast/-/vue-gct-panel-toast-0.1.2.tgz#da392d9f01578790afb9c5d975d157f0617c6200"
+  integrity sha512-z4Ux/Jlv1vMcqtjNRj0w1ibTDxYHasahHf0oX0Bla2hDcEeqBfrUrBK5mWFW8xRNwCsktIZimAy5p0rgXatFAA==
+  dependencies:
+    core-js "^3.6.4"
+    vue "^2.6.11"
+
 vue-hot-reload-api@^2.3.0:
   version "2.3.4"
   resolved "https://registry.npm.taobao.org/vue-hot-reload-api/download/vue-hot-reload-api-2.3.4.tgz#532955cc1eb208a3d990b3a9f9a70574657e08f2"
