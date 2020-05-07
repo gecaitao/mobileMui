@@ -13,7 +13,10 @@ export default {
     }
   },
   methods: {
-  }
+  },
+  created() {
+    console.log(process.env.VUE_APP_TITLE)
+  },
 }
 </script>
 

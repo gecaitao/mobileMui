@@ -16,17 +16,25 @@
     <van-skeleton title :row="3" :loading="skeletonLoading">
       <div>实际内容</div>
     </van-skeleton>
+    <van-button @click="addCount">
+      {{getCount}}sotre{{storeCount}}
+    </van-button>
+
   </section>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   name: 'Detail',
   components: {},
   computed: {
-    detailId: function () {
-      return this.$route.params.id
-    }
+    storeCount: function () {
+      return this.$store.state.count
+    },
+     ...mapGetters([
+      'getCount'
+    ])
   },
   watch: {
 
@@ -64,11 +72,14 @@ export default {
     },
     onSelect (options) {
       console.log(options)
-    }
+    },
+    addCount() {
+      this.$store.dispatch('addCount')
+  }
   },
   created(){
     setInterval(()=>{
-      this.skeletonLoading = !this.skeletonLoading
+      // this.skeletonLoading = !this.skeletonLoading
     },5000)
   }
 }
